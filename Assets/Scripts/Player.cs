@@ -45,9 +45,57 @@ public class Player : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void PickupHealth()
     {
-        
+        health += 50;
+        if (health > 200)
+        {
+            health = 200;
+        }
+    }
+
+    private void PickupArmor()
+    {
+        armor += 15;
+    }
+
+    private void PickupAssaultRiffleAmmo()
+    {
+        ammo.AddAmmo(Constants.AssaultRifle, 50);
+    }
+
+    private void PickupPistolAmmo()
+    {
+        ammo.AddAmmo(Constants.Pistol, 20);
+    }
+
+    private void PickupShotgunAmmo()
+    {
+        ammo.AddAmmo(Constants.Shotgun, 10);
+    }
+
+    public void PickupItem(int pickupType)
+    {
+        switch (pickupType)
+        {
+            case Constants.PickUpArmor:
+                PickupArmor();
+                break;
+            case Constants.PickUpHealth:
+                PickupHealth();
+                break;
+            case Constants.PickUpAssaultRifleAmmo:
+                PickupAssaultRiffleAmmo();
+                break;
+            case Constants.PickUpPistolAmmo:
+                PickupPistolAmmo();
+                break;
+            case Constants.PickUpShotgunAmmo:
+                PickupShotgunAmmo();
+                break;
+            default:
+                Debug.LogError("Bad pickup type passed" + pickupType);
+                break;
+        }
     }
 }

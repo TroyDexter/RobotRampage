@@ -62,10 +62,4 @@ public class Ammo : MonoBehaviour
 
         tagToAmmo[tag]--;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
