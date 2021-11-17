@@ -48,7 +48,6 @@ public class Game : MonoBehaviour
         player.GetComponent<CharacterController>().enabled = false;
         gameOverPanel.SetActive(true);
     }
-
     public void RestartGame()
     {
         SceneManager.LoadScene(Constants.SceneBattle);
